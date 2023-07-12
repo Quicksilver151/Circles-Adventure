@@ -7,6 +7,12 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _physics_process(delta):
+	$Shooter.aim(get_global_mouse_position())
+	
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_accept"):
+		$Shooter.shoot()
 
 #func _physics_process(delta):
 #	# Add the gravity.

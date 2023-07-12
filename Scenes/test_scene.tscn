@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://blvn6qcxvjlky"]
+[gd_scene load_steps=6 format=3 uid="uid://blvn6qcxvjlky"]
 
 [ext_resource type="PackedScene" uid="uid://bji0clkqbfs3c" path="res://Objects/Player.tscn" id="1_1a8dh"]
 [ext_resource type="Script" path="res://Objects/ObjectAssets/ObjectAssetCode/OcclusionPolygon.gd" id="1_bob33"]
+[ext_resource type="Texture2D" uid="uid://vprueybp3qx6" path="res://Assets/Sprites/Heal.svg" id="3_k2k53"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_shw8r"]
 polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 1280, 336, 1328, 560, 1328, 736, 624, 880, 144, 672, -432, 800, -208, 352)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sd2y"]
+radius = 128.0
 
 [node name="TestScene" type="Node2D"]
 
@@ -34,3 +38,13 @@ occluder = SubResource("OccluderPolygon2D_shw8r")
 [node name="Player" parent="." instance=ExtResource("1_1a8dh")]
 position = Vector2(672, 528)
 motion_mode = 0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["destructable", "enemy"]]
+position = Vector2(352, 192)
+
+[node name="Heal" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("3_k2k53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+visible = false
+shape = SubResource("CircleShape2D_8sd2y")
