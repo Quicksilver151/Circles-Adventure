@@ -9,6 +9,7 @@ polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 
 [node name="TestScene" type="Node2D"]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 color = Color(0.152941, 0.152941, 0.152941, 1)
 polygon = PackedVector2Array(-240, -272, 1552, -304, 2400, -128, 2272, 1696, -704, 1712, -544, 96)
 
@@ -31,5 +32,5 @@ polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 
 occluder = SubResource("OccluderPolygon2D_shw8r")
 
 [node name="Player" parent="." instance=ExtResource("1_1a8dh")]
-position = Vector2(608, 480)
+position = Vector2(672, 528)
 motion_mode = 0
