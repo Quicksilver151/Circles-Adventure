@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bji0clkqbfs3c"]
+
+[ext_resource type="Texture2D" uid="uid://6brh51uv0ggv" path="res://Assets/Sprites/Circle.svg" id="1_iighx"]
+[ext_resource type="Script" path="res://Code/Player.gd" id="1_nthwo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cxrn0"]
+radius = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_nthwo")
+
+[node name="Circle" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_iighx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_cxrn0")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("1_iighx")
+texture_scale = 10.0

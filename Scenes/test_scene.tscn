@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://blvn6qcxvjlky"]
+
+[ext_resource type="PackedScene" uid="uid://bji0clkqbfs3c" path="res://Objects/Player.tscn" id="1_1a8dh"]
+[ext_resource type="Script" path="res://Objects/ObjectAssets/ObjectAssetCode/OcclusionPolygon.gd" id="1_bob33"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_shw8r"]
+polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 1280, 336, 1328, 560, 1328, 736, 624, 880, 144, 672, -432, 800, -208, 352)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.152941, 0.152941, 0.152941, 1)
+polygon = PackedVector2Array(-240, -272, 1552, -304, 2400, -128, 2272, 1696, -704, 1712, -544, 96)
+
+[node name="OcclusionPolygon" type="Polygon2D" parent="."]
+position = Vector2(272, 448)
+polygon = PackedVector2Array(848, 64, 464, 320, 704, 464, 976, 320, 1008, 176, 864, 80)
+script = ExtResource("1_bob33")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(272, 448)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 1280, 336, 1328, 560, 1328, 736, 624, 880, 144, 672, -432, 800, -208, 352)
+
+[node name="CollisionPolygon2D2" type="Polygon2D" parent="Ground"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 1280, 336, 1328, 560, 1328, 736, 624, 880, 144, 672, -432, 800, -208, 352)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Ground"]
+occluder = SubResource("OccluderPolygon2D_shw8r")
+
+[node name="Player" parent="." instance=ExtResource("1_1a8dh")]
+position = Vector2(608, 480)
+motion_mode = 0
