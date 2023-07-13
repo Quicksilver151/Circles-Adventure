@@ -3,6 +3,11 @@
 [node name="BGLayer" type="CanvasLayer"]
 layer = -1
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 color = Color(0.133333, 0.133333, 0.133333, 1)
-polygon = PackedVector2Array(0, 0, 1920, 0, 1920, 1088, 0, 1088)

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var charge = 100
+var CHARGE_SPEED = 20
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
@@ -10,9 +12,18 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	$Shooter.aim(get_global_mouse_position())
 	
+	$Charge.value = charge
+	charge = min(charge + delta*CHARGE_SPEED, 100)
+	
+	if charge <= 0:
+		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_accept"):
-		$Shooter.shoot()
+	if event.is_action_pressed("a_shoot"):
+		$Shooter.shoot(self)
+
+
+
 
 #func _physics_process(delta):
 #	# Add the gravity.
