@@ -1,4 +1,58 @@
-[gd_scene format=3 uid="uid://cjnfjfmgf87tu"]
+[gd_scene load_steps=6 format=3 uid="uid://cjnfjfmgf87tu"]
+
+[ext_resource type="FontFile" uid="uid://3u755amatnur" path="res://Assets/Fonts/VarelaRound-Regular.ttf" id="1_cs25l"]
+[ext_resource type="Script" path="res://Code/Menu.gd" id="1_ybfqb"]
+[ext_resource type="Script" path="res://Code/NamedButton.gd" id="3_o47e5"]
+
+[sub_resource type="FontFile" id="FontFile_qvhq5"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/448/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/5/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/5/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/5/0/kerning_overrides/448/0 = Vector2(0, 0)
+cache/0/5/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/448/0/ascent = 0.0
+cache/0/448/0/descent = 0.0
+cache/0/448/0/underline_position = 0.0
+cache/0/448/0/underline_thickness = 0.0
+cache/0/448/0/scale = 1.0
+cache/0/448/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/448/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/448/0/kerning_overrides/448/0 = Vector2(0, 0)
+cache/0/448/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/64/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/64/0/glyphs/0/size = Vector2(0, 0)
+cache/0/64/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/64/0/glyphs/0/texture_idx = -1
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/448/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_4fqn8"]
+default_font = SubResource("FontFile_qvhq5")
+default_font_size = 64
 
 [node name="Menu" type="MarginContainer"]
 anchors_preset = 15
@@ -10,4 +64,48 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_ybfqb")
 metadata/_edit_use_anchors_ = true
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Label" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_cs25l")
+theme_override_font_sizes/font_size = 128
+text = "Circle's Adventure"
+
+[node name="Buttons" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = SubResource("Theme_4fqn8")
+theme_override_constants/separation = 64
+
+[node name="Play" type="Button" parent="VBox/Buttons"]
+layout_mode = 2
+text = "Play"
+script = ExtResource("3_o47e5")
+
+[node name="Settings" type="Button" parent="VBox/Buttons"]
+layout_mode = 2
+text = "     Settings     "
+script = ExtResource("3_o47e5")
+
+[node name="Exit" type="Button" parent="VBox/Buttons"]
+layout_mode = 2
+text = "Exit"
+script = ExtResource("3_o47e5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "v0.1.0"
+fit_content = true
