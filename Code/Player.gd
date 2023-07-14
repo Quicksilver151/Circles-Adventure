@@ -3,7 +3,7 @@ extends CharacterBody2D
 var charge = 100
 var CHARGE_SPEED = 20
 
-const SPEED = 500.0
+var SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -21,8 +21,15 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("a_shoot"):
 		$Shooter.shoot(self)
+	if event.is_action_pressed("a_dash"):
+		if charge > 45:
+			dash()
 
-
+func dash():
+	charge -= 45
+	SPEED *= 2.0
+	await get_tree().create_timer(0.5).timeout
+	SPEED /= 2.0
 
 
 #func _physics_process(delta):

@@ -32,7 +32,7 @@ func shoot(node:Object):
 	var bullet : Bullet = bullet_type.instantiate()
 	bullet.rotate(gun.rotation)
 	bullet.speed = 1000
-	bullet.position = global_position + Vector2.RIGHT.rotated(gun.rotation)*64
+	bullet.position = global_position + Vector2.RIGHT.rotated(gun.rotation)*24
 	node.get_parent().add_child(bullet)
 	node.charge -= 5
 	

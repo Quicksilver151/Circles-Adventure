@@ -1,7 +1,8 @@
 extends Node2D
 class_name TopDownMovement
 
-var speed = 12
+@onready var character : CharacterBody2D = get_parent()
+
 
 func _physics_process(delta):
 	if visible:
@@ -13,7 +14,6 @@ func get_velocity(delta):
 		Input.get_axis("ui_up","ui_down")
 		).normalized()
 	
-	var character: CharacterBody2D = get_parent()
 	character.velocity = direction * character.SPEED
 	character.move_and_slide()
 	

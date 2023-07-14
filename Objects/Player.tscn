@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b443ry8ou4hi0" path="res://Assets/Sprites/CircleOutline.svg" id="6_t1htw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cxrn0"]
-radius = 32.0
+radius = 16.0
 
 [sub_resource type="Gradient" id="Gradient_slyck"]
 offsets = PackedFloat32Array(0.378151, 1)
@@ -38,7 +38,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_iighx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_cxrn0")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
