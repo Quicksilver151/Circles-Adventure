@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjnfjfmgf87tu"]
+[gd_scene load_steps=6 format=3 uid="uid://c3pnv8r6kmpia"]
 
 [ext_resource type="FontFile" uid="uid://3u755amatnur" path="res://Assets/Fonts/VarelaRound-Regular.ttf" id="1_cs25l"]
 [ext_resource type="Script" path="res://Code/Menu.gd" id="1_ybfqb"]
-[ext_resource type="Script" path="res://Code/NamedButton.gd" id="3_o47e5"]
+[ext_resource type="Script" path="res://Components/NamedButton.gd" id="3_5kpok"]
 
 [sub_resource type="FontFile" id="FontFile_qvhq5"]
 face_index = null
@@ -92,17 +92,17 @@ theme_override_constants/separation = 64
 [node name="Play" type="Button" parent="VBox/Buttons"]
 layout_mode = 2
 text = "Play"
-script = ExtResource("3_o47e5")
+script = ExtResource("3_5kpok")
 
 [node name="Settings" type="Button" parent="VBox/Buttons"]
 layout_mode = 2
 text = "     Settings     "
-script = ExtResource("3_o47e5")
+script = ExtResource("3_5kpok")
 
 [node name="Exit" type="Button" parent="VBox/Buttons"]
 layout_mode = 2
 text = "Exit"
-script = ExtResource("3_o47e5")
+script = ExtResource("3_5kpok")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBox"]
 layout_mode = 2
