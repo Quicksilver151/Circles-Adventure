@@ -34,6 +34,7 @@ script = ExtResource("4_i7l4s")
 bullet_type = ExtResource("5_nm4ue")
 
 [node name="Circle" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_iighx")
 
@@ -41,6 +42,7 @@ texture = ExtResource("1_iighx")
 shape = SubResource("CircleShape2D_cxrn0")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+range_z_max = 0
 range_layer_min = -1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_tckv4")
@@ -49,6 +51,7 @@ texture_scale = 4.0
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Charge" type="TextureProgressBar" parent="."]
+z_index = 1
 clip_contents = true
 anchors_preset = 8
 anchor_left = 0.5

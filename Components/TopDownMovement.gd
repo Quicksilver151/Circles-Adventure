@@ -9,11 +9,8 @@ func _physics_process(delta):
 		get_velocity(delta)
 
 func get_velocity(delta):
-	var direction = Vector2(
-		Input.get_axis("ui_left","ui_right"),
-		Input.get_axis("ui_up","ui_down")
-		).normalized()
 	
+	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	character.velocity = direction * character.SPEED
 	character.move_and_slide()
 	

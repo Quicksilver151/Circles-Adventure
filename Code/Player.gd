@@ -14,6 +14,10 @@ func _physics_process(delta):
 	
 	$Charge.value = charge
 	charge = min(charge + delta*CHARGE_SPEED, 100)
+#	$Charge.tint_progress = lerp(Color.RED, Color.WHITE, charge/100)
+#	$Circle.modulate = lerp(Color.RED, Color.WHITE, charge/100)
+	modulate = lerp(Color.RED, Color.WHITE,  (log(charge)/4)**2.0)
+	print(log(charge))
 	
 	if charge <= 0:
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")

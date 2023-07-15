@@ -5,6 +5,7 @@ extends MarginContainer
 func _ready():
 	for node in $VBox/Buttons.get_children():
 		node.connect("name_pressed", button_press)
+	
 
 func button_press(name):
 	match name:

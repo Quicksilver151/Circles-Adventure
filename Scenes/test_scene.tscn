@@ -1,43 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://blvn6qcxvjlky"]
+[gd_scene load_steps=5 format=3 uid="uid://blvn6qcxvjlky"]
 
 [ext_resource type="PackedScene" uid="uid://bji0clkqbfs3c" path="res://Objects/Player.tscn" id="1_1a8dh"]
 [ext_resource type="Script" path="res://Objects/ObjectAssets/ObjectAssetCode/OcclusionPolygon.gd" id="1_bob33"]
 [ext_resource type="Texture2D" uid="uid://vprueybp3qx6" path="res://Assets/Sprites/Heal.svg" id="3_k2k53"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_shw8r"]
-polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 1280, 336, 1328, 560, 1328, 736, 624, 880, 144, 672, -432, 800, -208, 352)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8sd2y"]
 radius = 128.0
 
 [node name="TestScene" type="Node2D"]
 
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall1" type="Polygon2D" parent="Walls"]
+position = Vector2(288, 544)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(848, 64, 464, 320, 704, 464, 976, 320, 1008, 176, 864, 80)
+script = ExtResource("1_bob33")
+
+[node name="Wall2" type="Polygon2D" parent="Walls"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-192, 960, 320, 1568, 1680, 976, 1776, 144, 1040, 32, 208, -160, 48, 336, -256, 784, -208, 816, 112, 384, 416, 48, 1200, 320, 1648, 272, 1312, 1056, 336, 1088, -64, 864)
+script = ExtResource("1_bob33")
+
+[node name="Wall3" type="Polygon2D" parent="Walls"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(192, 624, 208, 832, 480, 752)
+script = ExtResource("1_bob33")
+
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
 color = Color(0.152941, 0.152941, 0.152941, 1)
 polygon = PackedVector2Array(-240, -272, 1552, -304, 2400, -128, 2272, 1696, -704, 1712, -544, 96)
 
-[node name="OcclusionPolygon" type="Polygon2D" parent="."]
-position = Vector2(272, 448)
-polygon = PackedVector2Array(848, 64, 464, 320, 704, 464, 976, 320, 1008, 176, 864, 80)
-script = ExtResource("1_bob33")
-
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(272, 448)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 1280, 336, 1328, 560, 1328, 736, 624, 880, 144, 672, -432, 800, -208, 352)
-
-[node name="CollisionPolygon2D2" type="Polygon2D" parent="Ground"]
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-64, 256, 128, 416, 496, 368, 640, 496, 1008, 528, 1280, 336, 1328, 560, 1328, 736, 624, 880, 144, 672, -432, 800, -208, 352)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Ground"]
-occluder = SubResource("OccluderPolygon2D_shw8r")
-
 [node name="Player" parent="." instance=ExtResource("1_1a8dh")]
 position = Vector2(672, 528)
 motion_mode = 0
+metadata/_edit_lock_ = true
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=["destructable", "enemy"]]
 position = Vector2(352, 192)

@@ -1,6 +1,8 @@
 extends Polygon2D
 class_name OcclusionPolygon
 
+#@export_subgroup("Collision","collision_")
+@export var collision = true
 
 func _ready():
 	var static_body = StaticBody2D.new()
@@ -8,6 +10,7 @@ func _ready():
 	
 	var collision_pol = CollisionPolygon2D.new()
 	collision_pol.polygon = polygon
+	collision_pol.disabled = !collision
 	static_body.add_child(collision_pol)
 	
 	var light_occluder = LightOccluder2D.new()
