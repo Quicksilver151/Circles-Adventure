@@ -14,17 +14,28 @@ func _physics_process(delta):
 	
 	$Charge.value = charge
 	charge = min(charge + delta*CHARGE_SPEED, 100)
-#	$Charge.tint_progress = lerp(Color.RED, Color.WHITE, charge/100)
-#	$Circle.modulate = lerp(Color.RED, Color.WHITE, charge/100)
-	modulate = lerp(Color.RED, Color.WHITE,  (log(charge)/4)**2.0)
-	print(log(charge))
+	modulate = lerp(Color.RED, Color.WHITE,  ((charge**2) / 1000))
 	
 	if charge <= 0:
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 	
+	if hold_shoot:
+		shoot_timer -= delta
+		if shoot_timer <= 0:
+			$Shooter.shoot()
+			shoot_timer = 0.2
+			
+	
+	
+var shoot_timer = 0.2
+var hold_shoot = false
 func _unhandled_input(event):
 	if event.is_action_pressed("a_shoot"):
-		$Shooter.shoot(self)
+		$Shooter.shoot()
+		hold_shoot = true
+	if event.is_action_released("a_shoot"):
+		hold_shoot = false
+		shoot_timer = 0.2
 	if event.is_action_pressed("a_dash"):
 		if charge > 45:
 			dash()

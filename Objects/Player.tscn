@@ -26,29 +26,20 @@ fill_to = Vector2(0, 1)
 motion_mode = 1
 script = ExtResource("1_nthwo")
 
-[node name="TopDownMovement" type="Node2D" parent="."]
-script = ExtResource("3_sxkwi")
-
 [node name="Shooter" type="Sprite2D" parent="."]
 script = ExtResource("4_i7l4s")
 bullet_type = ExtResource("5_nm4ue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cxrn0")
+
+[node name="TopDownMovement" type="Node2D" parent="."]
+script = ExtResource("3_sxkwi")
 
 [node name="Circle" type="Sprite2D" parent="."]
 z_index = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_iighx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_cxrn0")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-range_z_max = 0
-range_layer_min = -1
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tckv4")
-texture_scale = 4.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Charge" type="TextureProgressBar" parent="."]
 z_index = 1
@@ -73,3 +64,12 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("6_t1htw")
 metadata/_edit_use_anchors_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+range_z_max = 0
+range_layer_min = -1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tckv4")
+texture_scale = 4.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
