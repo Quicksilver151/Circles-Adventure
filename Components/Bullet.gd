@@ -2,8 +2,11 @@ extends Area2D
 class_name Bullet
 
 var speed = 1000
+var damage = 1
 
 
+func _ready():
+	print(damage)
 
 func _physics_process(delta):
 	position += Vector2.RIGHT.rotated(rotation)*speed*delta

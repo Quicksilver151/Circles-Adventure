@@ -33,10 +33,20 @@ func shoot(node:Object):
 	bullet.rotate(gun.rotation)
 	bullet.speed = 1000
 	bullet.position = global_position + Vector2.RIGHT.rotated(gun.rotation)*24
+	bullet.modulate = Player.modulate
+	bullet.damage = get_bullet_damage(Player.charge)
+	bullet.z_index = 1
 	node.get_parent().add_child(bullet)
 	node.charge -= 5
 	
 
+func get_bullet_damage(charge:int) -> int:
+	if charge > 20:
+		return 1
+	elif charge > 10:
+		return 2
+	else:
+		return 3
 
 
 
