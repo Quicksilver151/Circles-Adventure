@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bji0clkqbfs3c"]
+[gd_scene load_steps=11 format=3 uid="uid://bji0clkqbfs3c"]
 
 [ext_resource type="Texture2D" uid="uid://6brh51uv0ggv" path="res://Assets/Sprites/Circle.svg" id="1_iighx"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_nthwo"]
 [ext_resource type="Script" path="res://Components/TopDownMovement.gd" id="3_sxkwi"]
+[ext_resource type="Texture2D" uid="uid://11h4u60g62f6" path="res://Assets/Sprites/triangle_r.svg" id="4_872cw"]
 [ext_resource type="Script" path="res://Components/Shooter.gd" id="4_i7l4s"]
 [ext_resource type="PackedScene" uid="uid://cib15gk441jag" path="res://Objects/Varients/Bullets/RegularBullets.tscn" id="5_nm4ue"]
 [ext_resource type="Texture2D" uid="uid://b443ry8ou4hi0" path="res://Assets/Sprites/CircleOutline.svg" id="6_t1htw"]
@@ -29,6 +30,13 @@ script = ExtResource("1_nthwo")
 [node name="Shooter" type="Sprite2D" parent="."]
 script = ExtResource("4_i7l4s")
 bullet_type = ExtResource("5_nm4ue")
+
+[node name="Triangle" type="Sprite2D" parent="Shooter"]
+z_index = 1
+z_as_relative = false
+rotation = 6.28318
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_872cw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cxrn0")
