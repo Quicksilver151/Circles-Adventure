@@ -17,10 +17,13 @@ func _physics_process(delta):
 		if body.is_in_group("destructable"):
 			body.queue_free()
 			queue_free()
+		if body is StaticBody2D:
+			queue_free()
 	
 	if visibility_notif.is_on_screen() or vis_timer:
 		return
 	queue_free()
+	
 
 
 
