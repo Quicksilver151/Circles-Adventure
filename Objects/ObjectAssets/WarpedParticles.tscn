@@ -41,16 +41,19 @@ position = Vector2(112, 80)
 polygon = PackedVector2Array(-48, -64, 0, -96, 32, -64, 96, -64, 96, 32, 32, 96, -64, 80, -32, 16)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(144, 96)
 polygon = PackedVector2Array(-64, -64, 0, -64, 80, -112, 112, -64, 128, -16, 96, 96, -16, 128, -80, 80, -64, -32)
 
 [node name="Polygon2D3" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(208, 48)
 polygon = PackedVector2Array(-16, -96, 144, -16, 48, 80, -96, 144, -208, 0, -208, -48, -272, -128, -112, -128)
 
 [node name="Polygon2D4" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(192, 64)
 polygon = PackedVector2Array(-112, -96, -32, -80, 64, -80, 80, -16, 176, -16, 80, 96, 5.88556, 122.469, -144, 176, -128, 48, -192, -32)
@@ -61,6 +64,7 @@ position = Vector2(48, 208)
 polygon = PackedVector2Array(-64, 0, -16, -160, 48, -80, 144, -64, 32, 80, -32, 32, -112, 48)
 
 [node name="Polygon2D6" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(48, 128)
 polygon = PackedVector2Array(-96, -64, 144, -144, 128, -48, 160, 0, 0, 96, -48, 64, -128, 32, -144, -32)
@@ -71,6 +75,7 @@ position = Vector2(-64, 240)
 polygon = PackedVector2Array(-112, -112, -144, 0, -16, 32, -16, 80, 112, 48, 128, -32, 128, -128, 0, -144, -48, -112)
 
 [node name="Polygon2D8" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(48, 80)
 polygon = PackedVector2Array(-128, -64, -144, 64, 32, 64, 160, 112, 176, -16, 240, -112, 48, -96, -48, -176, -64, -96)
@@ -81,21 +86,25 @@ position = Vector2(96, 112)
 polygon = PackedVector2Array(-176, -96, -160, -16, -176, 80, -48, 80, 96, 96, 128, -48, 64, -80, -16, -128, -80, -96)
 
 [node name="Polygon2D10" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(112, 64)
 polygon = PackedVector2Array(-96, -48, -64, 48, 48, 32, 128, 0, 128, -80, 32, -64, -16, -160, -80, -144, -160, -112, -160, -32)
 
 [node name="Polygon2D11" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(80, 16)
 polygon = PackedVector2Array(-64, -112, 80, -96, 64, -32, 240, 0, 32, 224, -160, 208, -224, 128, -176, 16, -224, -112)
 
 [node name="Polygon2D12" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(0, 48)
 polygon = PackedVector2Array(-48, -96, 0, -160, 48, -128, 144, -112, 240, -112, 224, 16, 128, 128, -80, 272, -240, -112)
 
 [node name="Polygon2D13" type="Polygon2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.286275)
 position = Vector2(-32, 32)
 polygon = PackedVector2Array(-80, 0, -80, 48, -128, 160, -64, 192, 128, 48, 208, -80, 112, -144, -112, -80)

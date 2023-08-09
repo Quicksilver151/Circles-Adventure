@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bc3wbtkvrc7u3"]
+[gd_scene load_steps=9 format=3 uid="uid://bc3wbtkvrc7u3"]
 
 [ext_resource type="Script" path="res://Components/CustomParticles.gd" id="1_exxo5"]
 [ext_resource type="PackedScene" uid="uid://6olf1ngk7u4t" path="res://Objects/ObjectAssets/WarpedParticles.tscn" id="2_kupcg"]
+[ext_resource type="Shader" uid="uid://bdv7nqv8tuil0" path="res://Objects/ObjectAssets/BGLayer.tres" id="3_fwjoe"]
 
 [sub_resource type="Gradient" id="Gradient_o04am"]
 offsets = PackedFloat32Array(0, 0.183673, 0.765306, 1)
@@ -30,6 +31,9 @@ glow_intensity = 4.3
 glow_strength = 1.88
 glow_bloom = 0.38
 glow_hdr_threshold = 1.44
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmxaq"]
+shader = ExtResource("3_fwjoe")
 
 [node name="BGLayer" type="CanvasLayer"]
 layer = -1
@@ -145,10 +149,19 @@ polygon = PackedVector2Array(1440, -768, 1584, -624, 1504, -544, 1648, -448, 152
 environment = SubResource("Environment_bkenv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="CustomParticles2" type="Polygon2D" parent="CanvasLayer"]
+visible = false
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(96, 128, 32, 16, 192, 64, 304, 16, 416, 32, 576, 32, 688, 16, 880, 16, 992, 32, 1088, 48, 1200, 16, 1296, 32, 1424, 0, 1520, 16, 1632, 16, 1712, 64, 1792, 48, 1888, 80, 1792, 160, 1872, 176, 1888, 240, 1904, 336, 1888, 480, 1872, 576, 1888, 656, 1888, 768, 1888, 880, 1792, 912, 1712, 960, 1824, 1040, 1680, 1072, 1552, 1104, 1424, 1120, 1216, 1104, 1040, 1104, 880, 1104, 688, 1104, 544, 1088, 368, 1088, 240, 1088, 128, 1040, 16, 1008, 160, 944, 48, 896, 16, 800, 0, 656, 16, 496, -16, 320, -16, 224, 0, 96)
 script = ExtResource("1_exxo5")
 particle_instance = ExtResource("2_kupcg")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_bmxaq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
